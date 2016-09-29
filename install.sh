@@ -4,6 +4,8 @@ apt-get -qq update
 apt-get -qq install --no-install-recommends -y \
   wget curl git vim jq mc net-tools less       \
   ca-certificates netcat-traditional build-essential
+useradd -m -s /bin/bash developer
+echo 'developer ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
 echo 'Downloading JDK ...'
 wget --no-check-certificate --no-cookies                         \
      --header "Cookie: oraclelicense=accept-securebackup-cookie" \
@@ -24,6 +26,7 @@ cd /opt
 tar -xf /opt/elasticsearch.tgz -C /opt
 rm /opt/elasticsearch.tgz
 mv /opt/elasticsearch* /opt/elasticsearch
+chown -R developer /opt/elasticsearch
 echo 'Downloading Kibana ...'
 URL="https://download.elastic.co"
 V="4.6.1"
@@ -34,6 +37,5 @@ cd /opt
 tar -xf /opt/kibana.tgz -C /opt
 rm /opt/kibana.tgz
 mv /opt/kibana* /opt/kibana
-useradd -m -s /bin/bash developer
-echo 'developer ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
+chown -R developer /opt/kibana
 echo 'Building container, this may take a while ...'

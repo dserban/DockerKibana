@@ -36,4 +36,4 @@ rm /opt/kibana.tgz
 mv /opt/kibana* /opt/kibana
 useradd -m -s /bin/bash developer
 echo 'developer ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
-
+echo 'Building container, this may take a while ...'

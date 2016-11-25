@@ -10,3 +10,4 @@ WORKDIR /home/developer
 
 ENV JAVA_HOME=/opt/jdk
 
+CMD ["bash", "-c", "/usr/bin/launcher.sh"]

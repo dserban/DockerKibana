@@ -26,6 +26,10 @@ cd /opt
 tar -xf /opt/elasticsearch.tgz -C /opt
 rm /opt/elasticsearch.tgz
 mv /opt/elasticsearch* /opt/elasticsearch
+cd /opt
+git clone https://github.com/dserban/DockerKibana.git
+cd /opt/DockerKibana
+cp elasticsearch.yml /opt/elasticsearch/config/
 chown -R developer /opt/elasticsearch
 echo 'Downloading Kibana ...'
 URL="https://download.elastic.co"

@@ -2,7 +2,7 @@ export DEBIAN_FRONTEND=noninteractive
 localedef -i en_US -f UTF-8 en_US.UTF-8
 apt-get -qq update
 apt-get -qq install --no-install-recommends -y \
-  wget curl git vim jq mc net-tools less       \
+  wget curl git vim jq mc net-tools less sudo  \
   ca-certificates netcat-traditional build-essential
 useradd -m -s /bin/bash developer
 echo 'developer ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers

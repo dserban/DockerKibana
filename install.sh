@@ -55,4 +55,5 @@ cp launcher.sh /usr/bin/
 chmod +x /usr/bin/launcher.sh
 chown -R developer /opt/elasticsearch
 chown -R developer /opt/kibana
+chown -R developer /opt/neo4j
 echo 'Building container, this may take a while ...'

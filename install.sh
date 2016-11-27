@@ -36,10 +36,21 @@ cd /opt
 tar -xf /opt/kibana.tgz -C /opt
 rm /opt/kibana.tgz
 mv /opt/kibana* /opt/kibana
+echo 'Downloading Neo4J ...'
+URL="http://dist.neo4j.org"
+V="3.0.7"
+wget -qO /opt/neo4j.tgz \
+         ${URL}/neo4j-community-${V}-unix.tar.gz
+echo 'Extracting Neo4J ...'
+cd /opt
+tar -xf /opt/neo4j.tgz -C /opt
+rm /opt/neo4j.tgz
+mv /opt/neo4j-* /opt/neo4j
 cd /opt
 git clone https://github.com/dserban/DockerKibana.git
 cd /opt/DockerKibana
-cp elasticsearch.yml /opt/elasticsearch/config/
+cp elasticsearch.yml /opt/elasticsearch/config/elasticsearch.yml
+cp neo4j.conf /opt/neo4j/conf/neo4j.conf
 cp launcher.sh /usr/bin/
 chmod +x /usr/bin/launcher.sh
 chown -R developer /opt/elasticsearch

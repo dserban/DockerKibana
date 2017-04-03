@@ -40,7 +40,7 @@ mv /opt/kibana* /opt/kibana
 chown -R developer:root /opt/kibana
 echo 'Downloading Neo4J ...'
 URL="http://dist.neo4j.org"
-V="3.1.2"
+V="3.1.3"
 wget -qO /opt/neo4j.tgz \
          ${URL}/neo4j-community-${V}-unix.tar.gz
 echo 'Extracting Neo4J ...'
